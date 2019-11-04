@@ -22,7 +22,7 @@ class PlaceLocation {
   final double longitude;
   final String address;
 
-  PlaceLocation({
+  const PlaceLocation({
     @required this.latitude,
     @required this.longitude,
     this.address, // not required because lat. & long. are the key info for finding a location, it's the human readable part

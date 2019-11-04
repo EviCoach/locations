@@ -12,7 +12,7 @@ class DBHelper {
         onCreate: (db, version) {
       print('table created...');
       return db.execute(
-          'CREATE TABLE userplaces (id TEXT PRIMARY KEY, title TEXT, image TEXT)');
+          'CREATE TABLE userplaces (id TEXT PRIMARY KEY, title TEXT, image TEXT, loc_lat REAL, loc_lng REAL, address TEXT)');
     }, version: 1);
   }
 

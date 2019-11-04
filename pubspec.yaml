@@ -26,6 +26,7 @@ dependencies:
   sqflite: ^1.1.7+2
   location: ^2.3.5
   google_maps_flutter: ^0.5.21+8
+  http: ^0.12.0+2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -34,6 +35,14 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.7.4
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "dev_assets/places.png"
+  adaptive_icon_background: "#191919"
+  adaptive_icon_foreground: "dev_assets/places-adaptive.png"
 
 
 # For information on the generic Dart part of this file, see the

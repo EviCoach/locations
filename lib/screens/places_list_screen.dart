@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:location_app/providers/great_places.dart';
 import 'package:provider/provider.dart';
 
+import './place_detail_screen.dart';
 import './add_place_screen.dart';
 
 class PlacesListScreen extends StatelessWidget {
@@ -19,7 +20,7 @@ class PlacesListScreen extends StatelessWidget {
           )
         ],
       ),
-      body: FutureBuilder( 
+      body: FutureBuilder(
         future: Provider.of<GreatPlaces>(context, listen: false)
             .fetchAndSetPlaces(),
         builder: (ctx, snapshot) => snapshot.connectionState ==
@@ -41,8 +42,12 @@ class PlacesListScreen extends StatelessWidget {
                                     FileImage(greatPlaces.items[index].image),
                               ),
                               title: Text(greatPlaces.items[index].title),
+                              subtitle: Text(
+                                  greatPlaces.items[index].location.address),
                               onTap: () {
                                 // go to the detail page
+                                Navigator.of(context)
+                                    .pushNamed(PlaceDetailScreen.routeName, arguments: greatPlaces.items[index].id);
                               },
                             ),
                             itemCount: greatPlaces.items.length,
